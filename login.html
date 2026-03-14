@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Логін - GREENSHOP</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+    "
+  >
+    <div
+      style="
+        background-color: white;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div style="text-align: right">
+        <a
+          href="index.html"
+          style="
+            cursor: pointer;
+            color: #4caf50;
+            font-size: 18px;
+            text-decoration: none;
+          "
+          >✕</a
+        >
+      </div>
+
+      <h2 style="text-align: center; margin-top: 0">
+        <span style="color: #4caf50">Вхід</span>
+        <span style="color: #ccc; margin: 0 10px">|</span>
+        <a
+          href="registration.html"
+          style="color: #555; text-decoration: none; font-weight: normal"
+          >Реєстрація</a
+        >
+      </h2>
+
+      <p
+        style="
+          text-align: center;
+          color: #666;
+          font-size: 14px;
+          margin-bottom: 25px;
+        "
+      >
+        Введіть ваш email та пароль для входу.
+      </p>
+
+      <form action="#" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          style="
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+          "
+        />
+
+        <div style="position: relative; margin-bottom: 15px">
+          <input
+            type="password"
+            name="password"
+            placeholder="Пароль"
+            required
+            style="
+              width: 100%;
+              padding: 12px;
+              padding-right: 40px;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              box-sizing: border-box;
+            "
+          />
+
+          <span
+            onclick="togglePassword(this)"
+            style="
+              position: absolute;
+              right: 12px;
+              top: 50%;
+              transform: translateY(-50%);
+              cursor: pointer;
+              color: #999;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <svg
+              class="eye-open"
+              style="display: block"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+
+            <svg
+              class="eye-closed"
+              style="display: none"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+              ></path>
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+            </svg>
+          </span>
+        </div>
+
+        <div
+          style="
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <label style="cursor: pointer; color: #555">
+            <input type="checkbox" name="remember" style="margin-right: 8px" />
+            Запам'ятати мене
+          </label>
+          <a href="reset.html" style="color: #4caf50; text-decoration: none"
+            >Забули пароль?</a
+          >
+        </div>
+
+        <button
+          type="submit"
+          style="
+            background-color: #4caf50;
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+          "
+        >
+          Вхід
+        </button>
+      </form>
+
+      <div
+        style="
+          text-align: center;
+          color: #999;
+          font-size: 12px;
+          margin: 25px 0;
+          position: relative;
+        "
+      >
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            z-index: 1;
+          "
+        />
+        <span
+          style="
+            background-color: white;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+          "
+          >Або увійдіть через</span
+        >
+      </div>
+
+      <button
+        style="
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 10px;
+          border: 1px solid #ddd;
+          background-color: white;
+          border-radius: 4px;
+          cursor: pointer;
+          color: #555;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+          style="margin-right: 8px"
+        >
+          <path
+            fill="#EA4335"
+            d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+          />
+          <path
+            fill="#4285F4"
+            d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+          />
+          <path
+            fill="#FBBC05"
+            d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+          />
+          <path
+            fill="#34A853"
+            d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+          />
+        </svg>
+        Google
+      </button>
+
+      <button
+        style="
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ddd;
+          background-color: white;
+          border-radius: 4px;
+          cursor: pointer;
+          color: #555;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="margin-right: 8px"
+        >
+          <path
+            d="M13.3309 3.32083H15.1567V0.140833C14.8417 0.0975 13.7584 0 12.4967 0C6.72006 0 8.29172 6.54167 8.06172 7.5H5.15589V11.055H8.06089V20H11.6226V11.0558H14.4101L14.8526 7.50083H11.6217C11.7784 5.1475 10.9876 3.32083 13.3309 3.32083Z"
+            fill="#3B5999"
+          />
+        </svg>
+        Facebook
+      </button>
+    </div>
+    <script>
+      function togglePassword(iconSpan) {
+        const input = iconSpan.previousElementSibling;
+        const eyeOpen = iconSpan.querySelector(".eye-open");
+        const eyeClosed = iconSpan.querySelector(".eye-closed");
+
+        if (input.type === "password") {
+          input.type = "text";
+          eyeOpen.style.display = "none";
+          eyeClosed.style.display = "block";
+        } else {
+          input.type = "password";
+          eyeOpen.style.display = "block";
+          eyeClosed.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
