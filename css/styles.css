@@ -140,6 +140,7 @@ body.auth-page {
   color: #999;
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 .form-options {
