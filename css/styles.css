@@ -129,6 +129,7 @@ body.auth-page {
 
 .password-input {
   padding-right: 40px;
+  margin-bottom: 0;
 }
 
 .password-toggle {
