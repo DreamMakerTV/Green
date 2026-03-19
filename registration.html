@@ -3,57 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Реєстрація - GREENSHOP</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body
-    style="
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 40px;
-    "
-  >
-    <div
-      style="
-        background-color: white;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      "
-    >
-      <div style="text-align: right">
-        <a
-          href="index.html"
-          style="
-            cursor: pointer;
-            color: #4caf50;
-            font-size: 18px;
-            text-decoration: none;
-          "
-          >✕</a
-        >
+  <body class="auth-page">
+    <div class="auth-container">
+      <div class="close-btn-wrapper">
+        <a href="index.html" class="close-btn">✕</a>
       </div>
 
-      <h2 style="text-align: center; margin-top: 0">
-        <a
-          href="login.html"
-          style="color: #555; text-decoration: none; font-weight: normal"
-          >Вхід</a
-        >
-        <span style="color: #ccc; margin: 0 10px">|</span>
-        <span style="color: #4caf50">Реєстрація</span>
+      <h2 class="auth-title">
+        <a href="login.html" class="auth-link">Вхід</a>
+        <span class="tab-separator">|</span>
+        <span class="active-tab">Реєстрація</span>
       </h2>
 
-      <p
-        style="
-          text-align: center;
-          color: #666;
-          font-size: 14px;
-          margin-bottom: 25px;
-        "
-      >
-        Введіть ваш email та пароль для реєстрації.
-      </p>
+      <p class="auth-subtitle">Введіть ваш email та пароль для реєстрації.</p>
 
       <form action="#" method="POST">
         <input
@@ -61,60 +26,25 @@
           name="username"
           placeholder="Ім'я користувача"
           required
-          style="
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-          "
+          class="form-input"
         />
-
         <input
           type="email"
           name="email"
           placeholder="Введіть вашу email адресу"
           required
-          style="
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-          "
+          class="form-input"
         />
 
-        <div style="position: relative; margin-bottom: 15px">
+        <div class="password-wrapper">
           <input
             type="password"
             name="password"
             placeholder="Пароль"
             required
-            style="
-              width: 100%;
-              padding: 12px;
-              padding-right: 40px;
-              border: 1px solid #ddd;
-              border-radius: 4px;
-              box-sizing: border-box;
-            "
+            class="form-input password-input"
           />
-
-          <span
-            onclick="togglePassword(this)"
-            style="
-              position: absolute;
-              right: 12px;
-              top: 50%;
-              transform: translateY(-50%);
-              cursor: pointer;
-              color: #999;
-              display: flex;
-              align-items: center;
-            "
-          >
+          <span onclick="togglePassword(this)" class="password-toggle">
             <svg
               class="eye-open"
               style="display: block"
@@ -130,7 +60,6 @@
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
-
             <svg
               class="eye-closed"
               style="display: none"
@@ -151,35 +80,15 @@
           </span>
         </div>
 
-        <div style="position: relative; margin-bottom: 15px">
+        <div class="password-wrapper">
           <input
             type="password"
             name="confirm_password"
             placeholder="Підтвердіть пароль"
             required
-            style="
-              width: 100%;
-              padding: 12px;
-              padding-right: 40px;
-              border: 1px solid #ddd;
-              border-radius: 4px;
-              box-sizing: border-box;
-            "
+            class="form-input password-input"
           />
-
-          <span
-            onclick="togglePassword(this)"
-            style="
-              position: absolute;
-              right: 12px;
-              top: 50%;
-              transform: translateY(-50%);
-              cursor: pointer;
-              color: #999;
-              display: flex;
-              align-items: center;
-            "
-          >
+          <span onclick="togglePassword(this)" class="password-toggle">
             <svg
               class="eye-open"
               style="display: block"
@@ -195,7 +104,6 @@
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
-
             <svg
               class="eye-closed"
               style="display: none"
@@ -215,92 +123,34 @@
             </svg>
           </span>
         </div>
-        <div style="margin-bottom: 20px; text-align: left; font-size: 13px">
-          <label style="cursor: pointer; color: #555">
+
+        <div class="form-options left-align">
+          <label class="checkbox-label">
             <input
               type="checkbox"
               name="terms"
               required
-              style="margin-right: 8px"
+              class="checkbox-input"
             />
             Я погоджуюсь з
-            <a href="#" style="color: #4caf50; text-decoration: none"
-              >Умовами використання</a
-            >
+            <a href="#" class="link-green">Умовами використання</a>
           </label>
         </div>
 
-        <button
-          type="submit"
-          style="
-            background-color: #4caf50;
-            color: white;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-          "
-        >
-          Зареєструватися
-        </button>
+        <button type="submit" class="submit-btn">Зареєструватися</button>
       </form>
 
-      <div
-        style="
-          text-align: center;
-          color: #999;
-          font-size: 12px;
-          margin: 25px 0;
-          position: relative;
-        "
-      >
-        <hr
-          style="
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            z-index: 1;
-          "
-        />
-        <span
-          style="
-            background-color: white;
-            padding: 0 10px;
-            position: relative;
-            z-index: 2;
-          "
-          >Або зареєструйтесь через</span
-        >
+      <div class="divider">
+        <hr />
+        <span>Або зареєструйтесь через</span>
       </div>
 
-      <button
-        style="
-          width: 100%;
-          padding: 12px;
-          margin-bottom: 10px;
-          border: 1px solid #ddd;
-          background-color: white;
-          border-radius: 4px;
-          cursor: pointer;
-          color: #555;
-          font-size: 14px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        "
-      >
+      <button class="social-btn">
         <svg
           width="20"
           height="20"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"
-          style="margin-right: 8px"
         >
           <path
             fill="#EA4335"
@@ -322,28 +172,13 @@
         Продовжити з Google
       </button>
 
-      <button
-        style="
-          width: 100%;
-          padding: 12px;
-          border: 1px solid #ddd;
-          background-color: white;
-          border-radius: 4px;
-          cursor: pointer;
-          color: #555;
-          font-size: 14px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        "
-      >
+      <button class="social-btn">
         <svg
           width="20"
           height="20"
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style="margin-right: 8px"
         >
           <path
             d="M13.3309 3.32083H15.1567V0.140833C14.8417 0.0975 13.7584 0 12.4967 0C6.72006 0 8.29172 6.54167 8.06172 7.5H5.15589V11.055H8.06089V20H11.6226V11.0558H14.4101L14.8526 7.50083H11.6217C11.7784 5.1475 10.9876 3.32083 13.3309 3.32083Z"
@@ -353,6 +188,7 @@
         Продовжити з Facebook
       </button>
     </div>
+
     <script>
       function togglePassword(iconSpan) {
         const input = iconSpan.previousElementSibling;
