@@ -1,13 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
 }
 
-body.home-page {
+.home-page {
   background-color: #ffffff;
 }
 
-body.auth-page {
+.auth-page {
   background-color: #f4f4f4;
   padding: 40px;
 }
@@ -20,16 +26,13 @@ body.auth-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  box-sizing: border-box;
 }
 
 .header {
   border-bottom: 1px solid #eaeaea;
-}
-
-.header-content {
   font-size: 0;
-  padding: 20px 0 0 0;
+  padding-top: 18px;
+  text-align: left;
 }
 
 .header-logo,
@@ -38,54 +41,52 @@ body.auth-page {
   display: inline-block;
   vertical-align: middle;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 .header-logo {
-  width: 25%;
+  width: 150px;
+  text-align: left;
 }
 
 .header-nav {
-  width: 50%;
+  width: calc(100% - 250px);
   text-align: center;
 }
 
 .header-actions {
-  width: 25%;
+  width: 100px;
   text-align: right;
 }
 
 .logo {
   display: inline-block;
-  color: #4CAF50;
-  font-weight: bold;
-  font-size: 20px;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-.logo svg,
-.logo-text {
-  display: inline-block;
   vertical-align: middle;
+  line-height: 1;
 }
 
-.logo svg {
-  margin-right: 5px;
+.logo-img {
+  display: block;
+  width: 150px;
+  height: 34.3px;
 }
 
 .nav-link {
   display: inline-block;
-  color: #333;
-  text-decoration: none;
+  vertical-align: middle;
+  padding: 20px 0;
   margin: 0 20px;
-  padding-bottom: 25px;
+  color: #3d3d3d;
+  text-decoration: none;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   border-bottom: 3px solid transparent;
+  transition: color 0.3s ease;
 }
 
 .nav-link.active {
+  color: #333333;
+  font-weight: 700;
   border-bottom-color: #4CAF50;
 }
 
@@ -95,14 +96,24 @@ body.auth-page {
 
 .btn-login-header {
   display: inline-block;
+  vertical-align: middle;
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
-  padding: 10px 18px;
+  width: 100px;
+  height: 35px;
+  padding: 0;
+  line-height: 35px;
+  text-align: center;
   border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login-header:hover {
+  background-color: #3d8b4a;
 }
 
 .btn-login-header svg,
@@ -131,7 +142,6 @@ body.auth-page {
   display: inline-block;
   vertical-align: middle;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 .hero-text-block {
@@ -161,6 +171,7 @@ body.auth-page {
   margin-top: 0;
   margin-bottom: 15px;
   text-transform: uppercase;
+  padding-right: 1%;
 }
 
 .hero-desc {
@@ -181,6 +192,11 @@ body.auth-page {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3d8b4a;
 }
 
 .hero-img-element {
@@ -246,7 +262,6 @@ body.auth-page {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .form-input.mb-20 {
