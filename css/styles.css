@@ -1,32 +1,39 @@
-
 @font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/CeraPro-Regular.woff') format('woff'),
-    url('../fonts/CeraPro-Regular.ttf') format('truetype');
+  font-family: "Cera Pro";
+  src:
+    url("../fonts/CeraPro-Regular.woff2") format("woff2"),
+    url("../fonts/CeraPro-Regular.woff") format("woff"),
+    url("../fonts/CeraPro-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/CeraPro-Bold.woff') format('woff'),
-    url('../fonts/CeraPro-Bold.ttf') format('truetype');
+  font-family: "Cera Pro";
+  src:
+    url("../fonts/CeraPro-Bold.woff2") format("woff2"),
+    url("../fonts/CeraPro-Bold.woff") format("woff"),
+    url("../fonts/CeraPro-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/CeraPro-Medium.woff') format('woff'),
-    url('../fonts/CeraPro-Medium.ttf') format('truetype');
+  font-family: "Cera Pro";
+  src:
+    url("../fonts/CeraPro-Medium.woff2") format("woff2"),
+    url("../fonts/CeraPro-Medium.woff") format("woff"),
+    url("../fonts/CeraPro-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cera Pro';
-  src: url('../fonts/CeraPro-Black.woff') format('woff'),
-    url('../fonts/CeraPro-Black.ttf') format('truetype');
+  font-family: "Cera Pro";
+  src:
+    url("../fonts/CeraPro-Black.woff2") format("woff2"),
+    url("../fonts/CeraPro-Black.woff") format("woff"),
+    url("../fonts/CeraPro-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
@@ -37,9 +44,10 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Cera Pro', 'Arial', sans-serif;
+  font-family: "Cera Pro", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
-
 .home-page {
   background-color: #ffffff;
 }
@@ -50,7 +58,7 @@ body {
 }
 
 .text-green {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .container {
@@ -108,7 +116,6 @@ body {
   margin: 0 15px;
   color: rgba(61, 61, 61, 1);
   text-decoration: none;
-  font-family: 'Cera Pro', sans-serif;
   font-size: 16px;
   font-weight: 400;
   border-bottom: 3px solid transparent;
@@ -118,17 +125,17 @@ body {
 .nav-link.active {
   color: rgba(61, 61, 61, 1);
   font-weight: 700;
-  border-bottom-color: #4CAF50;
+  border-bottom-color: #4caf50;
 }
 
 .nav-link:hover {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .btn-login-header {
   display: inline-block;
   vertical-align: middle;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   text-decoration: none;
   width: 100px;
@@ -186,7 +193,6 @@ body {
 }
 
 .hero-subtitle {
-  font-family: 'Cera Pro', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(61, 61, 61, 1);
@@ -196,10 +202,9 @@ body {
 }
 
 .hero-title {
-  font-family: 'Cera Pro', sans-serif;
   font-size: 70px;
   line-height: 70px;
-  color: #3D3D3D;
+  color: #3d3d3d;
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 5px;
@@ -207,7 +212,6 @@ body {
 }
 
 .hero-desc {
-  font-family: 'Cera Pro', sans-serif;
   color: rgba(114, 114, 114, 1);
   font-size: 14px;
   line-height: 24px;
@@ -217,12 +221,11 @@ body {
 
 .btn-primary {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   text-decoration: none;
   padding: 10px 27px;
   border-radius: 6px;
-  font-family: 'Cera Pro', sans-serif;
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
@@ -234,8 +237,6 @@ body {
 }
 
 .hero-img-element {
-  max-width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -333,7 +334,7 @@ body {
   font-size: 0;
 }
 
-.form-options>* {
+.form-options > * {
   display: inline-block;
   vertical-align: middle;
   font-size: 13px;
@@ -456,7 +457,7 @@ body {
 }
 
 .shop {
-  padding: 40px 0 80px 0;
+  padding: 40px 0 80px;
 }
 
 .sidebar {
@@ -477,8 +478,6 @@ body {
 }
 
 .categories-title {
-  font-family: 'Cera Pro';
-  font-weight: 700;
   font-size: 18px;
   line-height: 16px;
   color: rgba(61, 61, 61, 1);
@@ -493,14 +492,15 @@ body {
 }
 
 .category-link {
-  font-family: 'Cera Pro';
   font-weight: 400;
   font-size: 15px;
   line-height: 40px;
   color: rgba(61, 61, 61, 1);
   text-decoration: none;
   display: block;
-  transition: color 0.3s ease, font-weight 0.3s ease;
+  transition:
+    color 0.3s ease,
+    font-weight 0.3s ease;
 }
 
 .category-link.active {
@@ -513,23 +513,19 @@ body {
 }
 
 .banner-img {
-  max-width: 100%;
-  height: auto;
   display: block;
 }
 
 .sale-banner {
+  display: block;
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .sale-banner:hover {
-  transform: scale(1.03); 
-  box-shadow: -40px 30px 150px 20px rgba(0, 0, 0, 0.1); 
+  transform: scale(1.03);
 }
 
 .shop-header {
@@ -549,7 +545,6 @@ body {
 }
 
 .tab-link {
-  font-family: 'Cera Pro';
   font-weight: 400;
   font-size: 15px;
   color: rgba(61, 61, 61, 1);
@@ -570,7 +565,6 @@ body {
 
 .shop-sort {
   float: right;
-  font-family: 'Cera Pro';
   font-size: 15px;
   color: rgba(61, 61, 61, 1);
 }
@@ -578,7 +572,6 @@ body {
 .sort-select {
   border: none;
   background: transparent;
-  font-family: 'Cera Pro';
   font-size: 15px;
   color: rgba(61, 61, 61, 1);
   cursor: pointer;
@@ -598,11 +591,10 @@ body {
   font-size: 16px;
   background-color: #fff;
   border-radius: 8px;
-  box-sizing: border-box;
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .product-card:nth-child(3n) {
@@ -612,29 +604,23 @@ body {
 .product-card:hover {
   transform: scale(1.03);
   background-color: #ffffff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .product-image img {
-  width: 100%;
-  height: auto;
   display: block;
   background-color: rgba(251, 251, 251, 1);
   padding: 20px;
-  box-sizing: border-box;
   border-radius: 4px;
 }
 
 .product-title {
-  font-family: 'Cera Pro';
   font-weight: 400;
   font-size: 16px;
-  color: #3D3D3D;
+  color: #3d3d3d;
   margin: 15px 0 5px 0;
 }
 
 .product-price {
-  font-family: 'Cera Pro';
   font-weight: 700;
   font-size: 18px;
   color: rgba(70, 163, 88, 1);
