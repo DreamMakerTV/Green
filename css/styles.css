@@ -597,7 +597,6 @@ select {
 }
 
 .product-image img {
-  max-width: 100%;
   height: auto;
   display: block;
   background-color: rgba(251, 251, 251, 1);
@@ -635,7 +634,6 @@ select {
   background-color: rgba(251, 251, 251, 1);
   width: 50%;
   padding: 30px;
-  box-sizing: border-box;
 }
 
 .promo-image {
@@ -643,7 +641,6 @@ select {
 }
 
 .promo-image img {
-  max-width: 100%;
   display: block;
   margin-top: -50px;
 }
@@ -655,21 +652,17 @@ select {
 }
 
 .promo-title {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 900;
   font-size: 18px;
   line-height: 24px;
   text-transform: uppercase;
   color: rgba(61, 61, 61, 1);
   margin: 0 0 10px 0;
-}
-
-.promo-title span {
-  display: block;
+  max-width: 170px;
+  margin-left: auto;
 }
 
 .promo-desc {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -703,8 +696,6 @@ select {
 }
 
 .blog-title {
-  font-family: "Cera Pro", sans-serif;
-  font-weight: 700;
   font-size: 30px;
   line-height: 16px;
   color: rgba(61, 61, 61, 1);
@@ -712,7 +703,6 @@ select {
 }
 
 .blog-subtitle {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -746,7 +736,6 @@ select {
 }
 
 .blog-meta {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 500;
   font-size: 14px;
   color: rgba(70, 163, 88, 1);
@@ -754,7 +743,6 @@ select {
 }
 
 .blog-card-title {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -763,7 +751,6 @@ select {
 }
 
 .blog-card-desc {
-  font-family: "Cera Pro", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
@@ -773,7 +760,6 @@ select {
 
 .blog-read-more {
   display: inline-block;
-  font-family: "Cera Pro", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
