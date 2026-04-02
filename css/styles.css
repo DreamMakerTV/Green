@@ -74,7 +74,7 @@ select {
 }
 
 .header {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 0.3px solid rgba(70, 163, 88, 0.5);
   padding-top: 18px;
 }
 
@@ -116,20 +116,29 @@ select {
   margin: 0 15px;
   color: rgba(61, 61, 61, 1);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-link.active {
+.nav-link::after {
+  content: attr(data-text);
+  font-weight: 700;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-item-dropdown:hover .nav-link {
   color: rgba(61, 61, 61, 1);
   font-weight: 700;
   border-bottom-color: #4caf50;
-}
-
-.nav-link:hover {
-  color: #4caf50;
 }
 
 .btn-login-header {
@@ -175,11 +184,6 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.hero-text-block,
-.hero-image-block {
-  font-size: 16px;
 }
 
 .hero-text-block {
@@ -489,7 +493,6 @@ select {
 }
 
 .category-link {
-  font-weight: 400;
   font-size: 15px;
   line-height: 40px;
   color: rgba(61, 61, 61, 1);
@@ -542,7 +545,6 @@ select {
 }
 
 .tab-link {
-  font-weight: 400;
   font-size: 15px;
   color: rgba(61, 61, 61, 1);
   text-decoration: none;
@@ -613,7 +615,6 @@ select {
 
 .product-image img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -703,7 +704,6 @@ select {
   text-decoration: line-through;
   font-size: 15px;
   margin-left: 10px;
-  font-weight: 400;
 }
 
 .discount-badge {
@@ -766,7 +766,6 @@ select {
 }
 
 .promo-desc {
-  font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: rgba(114, 114, 114, 1);
@@ -806,7 +805,6 @@ select {
 }
 
 .blog-subtitle {
-  font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: rgba(114, 114, 114, 1);
@@ -846,7 +844,6 @@ select {
 }
 
 .blog-card-title {
-  font-weight: 700;
   font-size: 20px;
   line-height: 26px;
   color: rgba(61, 61, 61, 1);
@@ -854,7 +851,6 @@ select {
 }
 
 .blog-card-desc {
-  font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   color: rgba(114, 114, 114, 1);
@@ -873,4 +869,114 @@ select {
 
 .blog-read-more:hover {
   color: rgba(70, 163, 88, 1);
+}
+
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  width: 210px;
+  background-color: rgba(237, 246, 238, 1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: transparent;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  padding: 0 15px;
+  text-decoration: none;
+  line-height: 1;
+  color: rgba(61, 61, 61, 1);
+  transition:
+    background-color 0.4s ease-in-out,
+    color 0.4s ease-in-out;
+}
+.dropdown-menu li:hover > a {
+  background-color: rgba(26, 113, 42, 1);
+  color: #ffffff;
+}
+
+.dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 178px;
+  background-color: rgba(237, 246, 238, 1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.has-submenu:hover .dropdown-submenu {
+  display: block;
+}
+
+.arrow-icon {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.arrow-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.arrow-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/arrowwhite.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.has-submenu:hover > a .arrow-icon::before {
+  opacity: 0;
+}
+
+.has-submenu:hover > a .arrow-icon::after {
+  opacity: 1;
 }
