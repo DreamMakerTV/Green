@@ -583,24 +583,38 @@ select {
 .product-card {
   width: 31%;
   background-color: #fff;
-  border-radius: 8px;
-  padding: 10px;
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
+  position: relative;
+  padding-bottom: 20px;
 }
 
-.product-card:hover {
-  transform: scale(1.03);
-  background-color: #ffffff;
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(70, 163, 88, 1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
-.product-image img {
-  height: auto;
-  display: block;
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-image {
+  position: relative;
   background-color: rgba(251, 251, 251, 1);
   padding: 20px;
   border-radius: 4px;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .product-title {
@@ -615,6 +629,96 @@ select {
   font-size: 18px;
   color: rgba(70, 163, 88, 1);
   margin: 0;
+}
+
+.product-actions {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+}
+
+.action-btn {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.action-icon {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(61, 61, 61, 1);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.basket .action-icon {
+  -webkit-mask-image: url("../images/shopbasket.png");
+  mask-image: url("../images/shopbasket.png");
+}
+
+.favorite .action-icon {
+  -webkit-mask-image: url("../images/favorite.png");
+  mask-image: url("../images/favorite.png");
+}
+
+.search .action-icon {
+  -webkit-mask-image: url("../images/search.png");
+  mask-image: url("../images/search.png");
+}
+
+.action-btn:hover .action-icon {
+  background-color: rgba(70, 163, 88, 1);
+}
+
+.price-current {
+  color: rgba(70, 163, 88, 1);
+}
+
+.price-old {
+  color: #a5a5a5;
+  text-decoration: line-through;
+  font-size: 15px;
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.discount-badge {
+  position: absolute;
+  min-width: 80px;
+  width: auto;
+  padding: 0 8px;
+  height: 29px;
+  top: 14px;
+  left: 0;
+  background-color: rgba(70, 163, 88, 1);
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  z-index: 5;
 }
 
 .promo-banners {
