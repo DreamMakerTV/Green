@@ -22,10 +22,50 @@
         </div>
 
         <nav class="header-nav">
-          <a href="index.html" class="nav-link active">Головна</a>
-          <a href="#shop-section" class="nav-link">Магазин</a>
-          <a href="plant-care.html" class="nav-link">Піклування про рослини</a>
-          <a href="#blog-section" class="nav-link">Блоги</a>
+          <ul class="header-menu">
+            <li>
+              <a href="index.html" class="nav-link" data-text="Головна"
+                >Головна</a
+              >
+            </li>
+            <li>
+              <a href="#shop-section" class="nav-link" data-text="Магазин"
+                >Магазин</a
+              >
+            </li>
+            <li class="nav-item-dropdown">
+              <a
+                href="plant-care.html"
+                class="nav-link"
+                data-text="Піклування про рослини"
+                >Піклування про рослини</a
+              >
+
+              <ul class="dropdown-menu">
+                <li><a href="#">Дренаж</a></li>
+                <li><a href="#">Фунгіциди</a></li>
+                <li><a href="#">Добрива</a></li>
+
+                <li class="has-submenu">
+                  <a href="#">Грунтування <span class="arrow-icon"></span></a>
+
+                  <ul class="dropdown-submenu">
+                    <li><a href="#">Універсальні</a></li>
+                    <li><a href="#">Для фікусів</a></li>
+                    <li><a href="#">Для кактусів</a></li>
+                    <li><a href="#">Для цитрусових</a></li>
+                    <li><a href="#">Для квітучих</a></li>
+                    <li><a href="#">Для орхідей</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#blog-section" class="nav-link" data-text="Блоги"
+                >Блоги</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <div class="header-actions">
