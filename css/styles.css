@@ -1024,7 +1024,7 @@ select {
   position: relative;
   background-repeat: no-repeat;
   background-position: 25px 0;
-  background-size: 80px 80px;
+  background-size: auto 80px;
 }
 
 .feature-item:not(:last-child)::after {
