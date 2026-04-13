@@ -1135,8 +1135,13 @@ select {
   width: 150px;
 }
 
-.contact-img {
+.contact-icon {
   display: block;
+  flex-shrink: 0;
+  color: rgba(70, 163, 88, 1);
+  stroke: currentColor;
+  fill: none;
+  transition: color 0.3s ease;
 }
 
 .contact-link {
