@@ -368,6 +368,7 @@ select {
 .checkbox-label {
   cursor: pointer;
   color: #555;
+  user-select: none;
 }
 
 .checkbox-input,
@@ -1220,20 +1221,27 @@ select {
 
 .social-link {
   display: block;
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  color: #3d8b4a;
 }
 
 .social-link:hover {
-  opacity: 0.7;
   transform: translateY(-2px);
 }
 
-.social-img {
+.social-icon {
   display: block;
-  width: 30px;
-  height: 30px;
+  color: rgba(70, 163, 88, 1);
+  transition: color 0.3s ease;
+  fill: none;
+}
+
+.fb-blue {
+  color: #3b5999;
+  fill: none;
 }
 
 .accept-title {
@@ -1255,4 +1263,52 @@ select {
   margin: 0;
   font-size: 14px;
   color: #3d3d3d;
+}
+
+.submit-btn {
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3d8b4a;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.social-btn {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+.social-btn:hover {
+  background-color: #ecf7ed;
+  border-color: #4caf50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15);
+}
+
+.social-btn:active {
+  background-color: #d8eedb;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.auth-link,
+.link-green,
+.back-link,
+.close-btn {
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover,
+.link-green:hover,
+.back-link:hover,
+.close-btn:hover {
+  color: #3d8b4a;
 }
