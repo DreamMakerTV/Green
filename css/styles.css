@@ -955,47 +955,36 @@ select {
   display: block;
 }
 
-.arrow-icon {
+.arrow-wrapper {
   position: relative;
-  width: 10px;
+  display: inline-flex;
+  align-items: center;
+  width: 6px;
   height: 10px;
+  margin-left: 8px;
 }
 
-.arrow-icon::before {
-  content: "";
+.arrow-icon-svg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../images/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  fill: none;
+  transition: opacity 0.4s ease;
+}
+
+.arrow-right {
   opacity: 1;
-  transition: opacity 0.4s ease-in-out;
 }
 
-.arrow-icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../images/arrowwhite.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.has-submenu:hover > a .arrow-icon::before {
+.arrow-left {
   opacity: 0;
 }
 
-.has-submenu:hover > a .arrow-icon::after {
+.has-submenu:hover > a .arrow-right {
+  opacity: 0;
+}
+
+.has-submenu:hover > a .arrow-left {
   opacity: 1;
 }
 
