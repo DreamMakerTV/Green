@@ -74,7 +74,7 @@ select {
 }
 
 .text-green {
-  color: #4caf50;
+  color: rgba(70, 163, 88, 1);
 }
 
 .container {
@@ -160,7 +160,7 @@ select {
 .btn-login-header {
   display: inline-block;
   vertical-align: middle;
-  background-color: #4caf50;
+  background-color: rgba(70, 163, 88, 1);
   color: white;
   text-decoration: none;
   width: 100px;
@@ -241,7 +241,7 @@ select {
 
 .btn-primary {
   display: inline-block;
-  background-color: #4caf50;
+  background-color: rgba(70, 163, 88, 1);
   color: white;
   text-decoration: none;
   padding: 10px 27px;
