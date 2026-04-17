@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="auth-page">
+    <div id="preloader-overlay" class="preloader-overlay">
+      <div class="loadingio-spinner-reload-2by998twmg8">
+        <div class="ldio-yzaezf3dcmj">
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="auth-container">
       <div class="close-btn-wrapper">
         <a href="index.html" class="close-btn">✕</a>
@@ -21,20 +32,17 @@
 
       <p class="auth-subtitle">Введіть ваш email та пароль для входу.</p>
 
-      <form
-        action="index.html"
-        method="POST"
-        onsubmit="
-          window.location.href = 'index.html';
-          return false;
-        "
-      >
+      <form action="index.html" method="POST" onsubmit="fakeLogin(event)">
         <input
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="Введіть вашу email адресу"
           required
           class="form-input"
+          oninvalid="
+            this.setCustomValidity('Будь ласка, введіть коректну email адресу.')
+          "
+          oninput="this.setCustomValidity('')"
         />
 
         <div class="password-wrapper">
@@ -44,6 +52,8 @@
             placeholder="Пароль"
             required
             class="form-input password-input"
+            oninvalid="this.setCustomValidity('Будь ласка, введіть пароль.')"
+            oninput="this.setCustomValidity('')"
           />
           <span onclick="togglePassword(this)" class="password-toggle">
             <svg
@@ -81,14 +91,14 @@
         <span>Або увійдіть через</span>
       </div>
 
-      <button class="social-btn">
+      <button type="button" class="social-btn" onclick="fakeLogin(event)">
         <svg width="20" height="20">
           <use href="images/sprite.svg#icon-google"></use>
         </svg>
         <span class="social-text">Продовжити з Google</span>
       </button>
 
-      <button class="social-btn">
+      <button type="button" class="social-btn" onclick="fakeLogin(event)">
         <svg class="fb-blue" width="20" height="20">
           <use href="images/sprite.svg#icon-facebook-login"></use>
         </svg>
@@ -111,6 +121,15 @@
           eyeOpen.style.display = "inline-block";
           eyeClosed.style.display = "none";
         }
+      }
+
+      function fakeLogin(event) {
+        event.preventDefault();
+        const preloader = document.getElementById("preloader-overlay");
+        preloader.classList.add("active");
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
       }
     </script>
   </body>
