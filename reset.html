@@ -26,6 +26,10 @@
           placeholder="Введіть вашу email адресу"
           required
           class="form-input mb-20"
+          oninvalid="
+            this.setCustomValidity('Будь ласка, введіть коректну email адресу.')
+          "
+          oninput="this.setCustomValidity('')"
         />
         <button type="submit" class="submit-btn mb-20">
           Надіслати інструкції

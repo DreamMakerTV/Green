@@ -47,19 +47,8 @@
                   <a href="#"
                     >Грунтування
                     <span class="arrow-wrapper">
-                      <svg
-                        class="arrow-icon-svg arrow-right"
-                        width="6"
-                        height="10"
-                      >
+                      <svg class="arrow-icon-svg" width="6" height="10">
                         <use href="images/sprite.svg#icon-arrow"></use>
-                      </svg>
-                      <svg
-                        class="arrow-icon-svg arrow-left"
-                        width="6"
-                        height="10"
-                      >
-                        <use href="images/sprite.svg#icon-arrowwhite"></use>
                       </svg>
                     </span>
                   </a>
@@ -90,6 +79,12 @@
             Login
           </a>
         </div>
+
+        <button class="burger-btn" aria-label="Відкрити меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
@@ -190,13 +185,33 @@
                 </li>
               </ul>
 
-              <div class="shop-sort">
-                <span class="sort-label">Сортувати за:</span>
-                <select class="sort-select">
-                  <option>За замовчуванням</option>
-                  <option>За зростанням</option>
-                  <option>За спаданням</option>
-                </select>
+              <div class="shop-sort-wrapper">
+                <button class="filter-btn" id="filterBtn">
+                  <svg
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                    ></path>
+                  </svg>
+                  Фільтри
+                </button>
+
+                <div class="shop-sort">
+                  <span class="sort-label">Сортування:</span>
+                  <select class="sort-select">
+                    <option>За замовчуванням</option>
+                    <option>За зростанням</option>
+                    <option>За спаданням</option>
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -813,5 +828,103 @@
         </div>
       </div>
     </footer>
+    <div class="body-overlay" id="bodyOverlay"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const burgerBtn = document.querySelector(".burger-btn");
+        const headerNav = document.querySelector(".header-nav");
+        const bodyOverlay = document.getElementById("bodyOverlay");
+        const body = document.body;
+
+        const filterBtn = document.getElementById("filterBtn");
+        const sidebar = document.querySelector(".sidebar");
+
+        function toggleMenu() {
+          const scrollBarWidth =
+            window.innerWidth - document.documentElement.clientWidth;
+
+          burgerBtn.classList.toggle("active");
+          headerNav.classList.toggle("active");
+          bodyOverlay.classList.toggle("active");
+
+          if (headerNav.classList.contains("active")) {
+            body.style.overflow = "hidden";
+            body.style.paddingRight = scrollBarWidth + "px";
+          } else {
+            body.style.overflow = "";
+            body.style.paddingRight = "";
+
+            const openMenus = headerNav.querySelectorAll(".open");
+            openMenus.forEach((menu) => menu.classList.remove("open"));
+
+            const expandedLinks = headerNav.querySelectorAll(".expanded");
+            expandedLinks.forEach((link) => link.classList.remove("expanded"));
+          }
+        }
+
+        burgerBtn.addEventListener("click", toggleMenu);
+
+        if (filterBtn) {
+          filterBtn.addEventListener("click", () => {
+            const scrollBarWidth =
+              window.innerWidth - document.documentElement.clientWidth;
+            sidebar.classList.add("active");
+            bodyOverlay.classList.add("active");
+            body.style.overflow = "hidden";
+            body.style.paddingRight = scrollBarWidth + "px";
+          });
+        }
+
+        bodyOverlay.addEventListener("click", () => {
+          if (headerNav.classList.contains("active")) {
+            toggleMenu();
+          }
+
+          if (sidebar.classList.contains("active")) {
+            sidebar.classList.remove("active");
+            bodyOverlay.classList.remove("active");
+            body.style.overflow = "";
+            body.style.paddingRight = "";
+          }
+        });
+
+        const dropdownLinks = document.querySelectorAll(
+          ".nav-item-dropdown > .nav-link, .has-submenu > a",
+        );
+
+        dropdownLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+
+              const submenu = this.nextElementSibling;
+
+              if (
+                submenu &&
+                (submenu.classList.contains("dropdown-menu") ||
+                  submenu.classList.contains("dropdown-submenu"))
+              ) {
+                submenu.classList.toggle("open");
+                this.classList.toggle("expanded");
+
+                if (!submenu.classList.contains("open")) {
+                  const openNestedMenus = submenu.querySelectorAll(".open");
+                  openNestedMenus.forEach((nestedMenu) => {
+                    nestedMenu.classList.remove("open");
+                  });
+
+                  const expandedNestedLinks =
+                    submenu.querySelectorAll(".expanded");
+                  expandedNestedLinks.forEach((nestedLink) => {
+                    nestedLink.classList.remove("expanded");
+                  });
+                }
+              }
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
