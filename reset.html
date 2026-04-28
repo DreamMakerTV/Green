@@ -2,6 +2,7 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Відновлення пароля - GREENSHOP</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="stylesheet" href="css/reset.css" />
@@ -26,6 +27,10 @@
           placeholder="Введіть вашу email адресу"
           required
           class="form-input mb-20"
+          oninvalid="
+            this.setCustomValidity('Будь ласка, введіть коректну email адресу.')
+          "
+          oninput="this.setCustomValidity('')"
         />
         <button type="submit" class="submit-btn mb-20">
           Надіслати інструкції
